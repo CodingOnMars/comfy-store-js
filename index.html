@@ -2,127 +2,156 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home | Comfy</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
-  <link rel="stylesheet" href="styles.css">
-  <script defer type="module" src="index.js"></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Home | Comfy</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+	<link rel="stylesheet" href="styles.css">
+	<script defer type="module" src="index.js"></script>
 </head>
 
 <body>
-  <nav class="navbar">
-    <div class="nav-center">
-      <div>
-        <button class="toggle-nav">
-          <i class="fas fa-bars"></i>
-        </button>
-        <!-- Nav links -->
-        <ul class="nav-links">
-          <li>
-            <a class="nav-link" href="index.html">Home</a>
-          </li>
-          <li>
-            <a class="nav-link" href="products.html">Products</a>
-          </li>
-          <li>
-            <a class="nav-link" href="about.html">About</a>
-          </li>
-        </ul>
-      </div>
-      <!-- Nav logo -->
-      <img class="nav-logo" src="./images/logo-white.svg" alt="logo">
-      <!-- Cart icon -->
-      <div class="toggle-container">
-        <button class="toggle-cart">
-          <i class="fas fa-shopping-cart"></i>
-        </button>
-        <span class="cart-item-count">1</span>
-      </div>
-    </div>
-  </nav>
-  <!-- Hero section -->
-  <section class="hero">
-    <div class="hero-container">
-      <h1 class="text-slanted">
-        Rest, relax, undwind
-      </h1>
-      <h3>Embrace your choices - we do</h3>
-      <a class="hero-btn" href="products.html">Show now</a>
-    </div>
-  </section>
-  <!-- Sidebar -->
-  <div class="sidebar-overlay">
-    <aside class="sidebar">
-      <!-- Close button -->
-      <button class="sidebar-close">
-        <i class="fas fa-times"></i>
-      </button>
-      <!-- Links -->
-      <ul class="sidebar-links">
-        <li>
-          <a class="sidebar-link" href="index.html">
-            <i class="fas fa-home fa-fw"></i>
-            Home
-          </a>
-        </li>
-        <li>
-          <a class="sidebar-link" href="products.html">
-            <i class="fas fa-couch fa-fw"></i>
-            Products
-          </a>
-        </li>
-        <li>
-          <a class="sidebar-link" href="about.html">
-            <i class="fas fa-book fa-fw"></i>
-            About
-          </a>
-        </li>
-      </ul>
-    </aside>
-  </div>
-  <!-- Cart -->
-  <div class="cart-overlay">
-    <aside class="cart">
-      <button class="cart-close">
-        <i class="fas fa-times"></i>
-      </button>
-      <header>
-        <h3 class="text-slanted">Your bag</h3>
-      </header>
-      <!-- Cart items -->
-      <div class="cart-items">
-        <!-- Single item -->
-        <article class="cart-item" data-id="">
-          <img class="cart-item-img" src="./images/main-bcg.jpeg" alt="cart item">
-          <!-- Item info -->
-          <div>
-            <h4 class="cart-item-name">high-back bench</h4>
-            <p class="cart-item-price">113.99</p>
-            <button class="cart-item-remove-btn">Remove</button>
-          </div>
-          <!-- Amount toggle -->
-          <div>
-            <button class="cart-item-increase-btn">
-              <i class="fas fa-chevron-up"></i>
-            </button>
-            <p class="cart-item-amount">1</p>
-            <button class="cart-item-decrease-btn">
-              <i class="fas fa-chevron-down"></i>
-            </button>
-          </div>
-        </article>
-        <!-- End of single item -->
-      </div>
-      <!-- Footer -->
-      <footer>
-        <h3 class="cart-total text-slanted">
-          total: $12.99
-        </h3>
-        <button class="cart-checkout btn">Checkout</button>
-      </footer>
-    </aside>
-  </div>
+	<nav class="navbar">
+		<div class="nav-center">
+			<div>
+				<button class="toggle-nav">
+					<i class="fas fa-bars"></i>
+				</button>
+				<!-- Nav links -->
+				<ul class="nav-links">
+					<li>
+						<a class="nav-link" href="index.html">Home</a>
+					</li>
+					<li>
+						<a class="nav-link" href="products.html">Products</a>
+					</li>
+					<li>
+						<a class="nav-link" href="about.html">About</a>
+					</li>
+				</ul>
+			</div>
+			<!-- Nav logo -->
+			<img class="nav-logo" src="./images/logo-white.svg" alt="logo">
+			<!-- Cart icon -->
+			<div class="toggle-container">
+				<button class="toggle-cart">
+					<i class="fas fa-shopping-cart"></i>
+				</button>
+				<span class="cart-item-count">1</span>
+			</div>
+		</div>
+	</nav>
+	<!-- Hero section -->
+	<section class="hero">
+		<div class="hero-container">
+			<h1 class="text-slanted">
+				Rest, relax, undwind
+			</h1>
+			<h3>Embrace your choices - we do</h3>
+			<a class="hero-btn" href="products.html">Show now</a>
+		</div>
+	</section>
+	<!-- Sidebar -->
+	<div class="sidebar-overlay">
+		<aside class="sidebar">
+			<!-- Close button -->
+			<button class="sidebar-close">
+				<i class="fas fa-times"></i>
+			</button>
+			<!-- Links -->
+			<ul class="sidebar-links">
+				<li>
+					<a class="sidebar-link" href="index.html">
+						<i class="fas fa-home fa-fw"></i>
+						Home
+					</a>
+				</li>
+				<li>
+					<a class="sidebar-link" href="products.html">
+						<i class="fas fa-couch fa-fw"></i>
+						Products
+					</a>
+				</li>
+				<li>
+					<a class="sidebar-link" href="about.html">
+						<i class="fas fa-book fa-fw"></i>
+						About
+					</a>
+				</li>
+			</ul>
+		</aside>
+	</div>
+	<!-- Cart -->
+	<div class="cart-overlay">
+		<aside class="cart">
+			<button class="cart-close">
+				<i class="fas fa-times"></i>
+			</button>
+			<header>
+				<h3 class="text-slanted">Your bag</h3>
+			</header>
+			<!-- Cart items -->
+			<div class="cart-items">
+				<!-- Single item -->
+				<article class="cart-item" data-id="">
+					<img class="cart-item-img" src="./images/main-bcg.jpeg" alt="cart item">
+					<!-- Item info -->
+					<div>
+						<h4 class="cart-item-name">high-back bench</h4>
+						<p class="cart-item-price">113.99</p>
+						<button class="cart-item-remove-btn">Remove</button>
+					</div>
+					<!-- Amount toggle -->
+					<div>
+						<button class="cart-item-increase-btn">
+							<i class="fas fa-chevron-up"></i>
+						</button>
+						<p class="cart-item-amount">1</p>
+						<button class="cart-item-decrease-btn">
+							<i class="fas fa-chevron-down"></i>
+						</button>
+					</div>
+				</article>
+				<!-- End of single item -->
+			</div>
+			<!-- Footer -->
+			<footer>
+				<h3 class="cart-total text-slanted">
+					total: $12.99
+				</h3>
+				<button class="cart-checkout btn">Checkout</button>
+			</footer>
+		</aside>
+	</div>
+	<!-- Featured products -->
+	<section class="section featured">
+		<div class="title">
+			<h2 class="span">Featured</h2>
+		</div>
+		<div class="featured-center section-center">
+			<h2 class="section-loading">Loading...</h2>
+			<!-- Single product -->
+			<article class="product">
+				<div class="product-container">
+					<img class="product-img img" src="./images/main-bcg.jpeg" alt="product photo">
+					<div class="product-icons">
+						<a class="product-icon" href="product.html?id=1">
+							<i class="fas fa-search"></i>
+						</a>
+						<button class="product-cart-btn product-icon" data-id="1">
+							<i class="fas fa-shopping-cart"></i>
+						</button>
+					</div>
+				</div>
+				<footer>
+					<p class="product-name">Name</p>
+					<h4 class="product-price">19.99</h4>
+				</footer>
+			</article>
+			<!-- End of Single product -->
+		</div>
+		<a class="btn" href="products.html">All products</a>
+	</section>
 </body>
 
 </html>
