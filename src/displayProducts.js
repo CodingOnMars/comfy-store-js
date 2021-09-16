@@ -14,7 +14,7 @@ const display = (products, element) => {
         <a class="product-icon" href="product.html?id=${id}">
           <i class="fas fa-search"></i>
         </a>
-        <button class="product-cart-btn product-icon" data-id="1">
+        <button class="product-cart-btn product-icon" data-id=${id}>
           <i class="fas fa-shopping-cart"></i>
         </button>
       </div>
@@ -27,6 +27,16 @@ const display = (products, element) => {
   `;
     })
     .join('');
+  element.addEventListener('click', function (e) {
+    // const parent = e.target;
+    // console.log(parent); // returns icon
+    // If we just write e.target, it returns an icon, but we need its parent:
+    const parent = e.target.parentElement;
+    // console.log(parent); // returns button
+    if (parent.classList.contains('product-cart-btn')) {
+      addToCart(parent.dataset.id);
+    }
+  });
 };
 
 export default display;
