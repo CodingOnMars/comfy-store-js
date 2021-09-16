@@ -4,7 +4,7 @@ import { allProductsUrl } from './utils.js';
 const fetchProducts = async () => {
   // Waiting for a response from URL, catching errors and displaying in console
   const response = await fetch(allProductsUrl).catch((err) => console.log(err));
-  // If response is succesfull, apply json()
+  // If response is successfull, apply json()
   if (response) {
     return response.json();
   }
