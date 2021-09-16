@@ -12,9 +12,18 @@ const getElement = (selection) => {
   );
 };
 
-const formatPrice = () => {};
+// NOTE: in our JSON price values have no division on dollars and cents. Usually, when we pass info to payment systems like Stripe, our price should be in cents. To avoid bugs, it's better to format price values and display formatted value on the page (i.e. in HTML), than make a mistake during sending data to payment systems.
 
-// NOTE: we set up these functions separately, becuase we will use them not only in store, but in cart as well. This functionality is useful when we deal with multiple pages. 
+// We could format price like this ${price / 100} and add it as heading value, but a proper way is to set up a function that uses international number format
+const formatPrice = (price) => {
+  let formattedPrice = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+  }).format((price / 100).toFixed(2));
+  return formattedPrice;
+};
+
+// NOTE: we set up these functions separately, becuase we will use them not only in store, but in cart as well. This functionality is useful when we deal with multiple pages.
 const getStorageItem = (item) => {
   let storageItem = localStorage.getItem(item);
   if (storageItem) {
