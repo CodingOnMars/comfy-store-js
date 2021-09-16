@@ -15,5 +15,14 @@ const setupStore = (products) => {
   });
 };
 // console.log(store); // [], NOTE: returns an empty array, because we did not invoke setupStore() here
+
 const findProduct = () => {};
+
+/* NOTE: this is also valid way to export:
+export let store;
+export const setupStore;
+export findProduct;
+
+But, since we have a bunch of exports, it's simpler to export them together, instead of looking in the file what was exported.
+*/
 export { store, setupStore, findProduct };
