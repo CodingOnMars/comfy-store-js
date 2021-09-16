@@ -14,8 +14,19 @@ const getElement = (selection) => {
 
 const formatPrice = () => {};
 
-const getStorageItem = () => {};
-const setStorageItem = () => {};
+// NOTE: we set up these functions separately, becuase we will use them not only in store, but in cart as well. This functionality is useful when we deal with multiple pages. 
+const getStorageItem = (item) => {
+  let storageItem = localStorage.getItem(item);
+  if (storageItem) {
+    storageItem - JSON.parse(localStorage.getItem(item));
+  } else {
+    storageItem = [];
+  }
+  return storageItem;
+};
+const setStorageItem = (name, item) => {
+  localStorage.setItem(name, JSON.stringify(item));
+};
 
 export {
   allProductsUrl,
