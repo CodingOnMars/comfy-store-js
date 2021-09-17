@@ -29,11 +29,11 @@ const setupCompanies = (store) => {
     const element = e.target;
     if (element.classList.contains('company-btn')) {
       let newStore = [];
-      // Display products of all companies when clicking 'All' button
+      // Display all products of all companies when clicking 'All' button
       if (element.textContent === 'all') {
         newStore = [...store];
       } else {
-        // Display products of a company when clicking the company name
+        // Display all products of a company when clicking the company name
         newStore = store.filter(
           (product) => product.company === e.target.textContent
         );
