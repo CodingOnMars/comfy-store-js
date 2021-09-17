@@ -17,4 +17,11 @@ const loading = getElement('.page-loading');
 
 display(store, getElement('.products-container'));
 
+// Search(filter) by products
+setupSearch(store);
+// Search(filter) by companies
+setupCompanies(store);
+// Search(filter) by price
+setupPrice(store);
+
 loading.style.display = 'none';
