@@ -19,7 +19,7 @@ const setupSearch = (store) => {
       // console.log(newStore); // returns an array with object(s) if there are products match search request (search input value)
 
       // Display product items that match search request (if there are any)
-      display(newStore, getElement('.products-container'));
+      display(newStore, getElement('.products-container'), true);
       // If there are no products that match search request and search input is not empty, display an error message
       if (newStore.length < 1) {
         const products = getElement('.products-container');
@@ -27,7 +27,7 @@ const setupSearch = (store) => {
       }
     } else {
       // If input is empty, show default product items
-      display(store, getElement('.products-container'));
+      display(store, getElement('.products-container'), true);
     }
   });
 };

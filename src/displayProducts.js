@@ -1,6 +1,6 @@
 import { formatPrice } from './utils.js';
 import { addToCart } from './cart/setupCart.js';
-const display = (products, element) => {
+const display = (products, element, filters) => {
   // console.log(products, element); // checking if we get an array with featured items and div with class 'featured-center'
 
   // Display products
@@ -27,6 +27,7 @@ const display = (products, element) => {
   `;
     })
     .join('');
+  if (filters) return;
   element.addEventListener('click', function (e) {
     // const parent = e.target;
     // console.log(parent); // returns icon
