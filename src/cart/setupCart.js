@@ -95,14 +95,10 @@ function removeItem(id) {
 function setupCartFunctionality() {
   cartItemsDOM.addEventListener('click', function (e) {
     const element = e.target;
-    console.log(`this is: ${element}`);
     // NOTE: in this case we have buttons with icons, that's why we need to target parent element as well
     const parent = e.target.parentElement;
-    console.log(`this is: ${parent}`);
     const id = e.target.dataset.id;
-    console.log(`this is: ${id}`);
     const parentID = e.target.parentElement.dataset.id;
-    console.log(`this is: ${parentID}`);
 
     // Remove
     if (element.classList.contains('cart-item-remove-btn')) {
@@ -113,6 +109,10 @@ function setupCartFunctionality() {
       parent.parentElement.remove();
     }
     // Increase
+    if (parent.classList.contains('cart-item-increase-btn')) {
+      const newAmount = increaseAmount(parentID);
+      parent.nextElementSibling.textContent = newAmount;
+    }
     // Decrease
 
     displayCartItemCount();
