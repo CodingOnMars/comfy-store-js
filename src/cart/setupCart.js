@@ -58,8 +58,25 @@ function displayCartTotal() {
   cartTotalDOM.textContent = `Total: ${formatPrice(total)}`;
 }
 
+function displayCartItemsDOM() {
+  cart.forEach((cartItem) => {
+    addToCartDOM(cartItem);
+  });
+}
+
+function setupCartFunctionality() {}
+
 const init = () => {
-  console.log(cart); // if there is no data, returns an empty array
+  // console.log(cart); // if there is no data, returns an empty array
+
+  // Display amount of cart items
+  displayCartItemCount();
+  // Display total
+  displayCartTotal();
+  // Add all cart items to the DOM
+  displayCartItemsDOM();
+  // Setup cart functionality
+  setupCartFunctionality();
 };
 
 init();
