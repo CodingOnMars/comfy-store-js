@@ -31,6 +31,17 @@ export const addToCart = (id) => {
     // console.log(cart); // returns an array with object (amount, product data)
   } else {
     // Update values
+    const amount = increaseAmount(id);
+    // const items = cartItemsDOM.querySelectorAll('.cart-item-amount');
+    // console.log(items); // returns node list with items
+
+    // NOTE: we can't use find() on a node list, that's why we turn it into an array first, using spread operator
+    const items = [...cartItemsDOM.querySelectorAll('.cart-item-amount')];
+    // console.log(items); // now returns an array
+
+    // NOTE: we looking for dataset.id because we have data-id="${id} in DOM cart item (<p class="cart-item-amount data-id="${id}">${amount}</p>)
+    const newAmount = items.find((value) => value.dataset.id === id);
+    newAmount.textContent = amount;
   }
 
   // Add one to the item count
@@ -62,6 +73,18 @@ function displayCartItemsDOM() {
   cart.forEach((cartItem) => {
     addToCartDOM(cartItem);
   });
+}
+
+function increaseAmount(id) {
+  let newAmount;
+  cart = cart.map((cartItem) => {
+    if (cartItem.id === id) {
+      newAmount = cartItem.amount + 1;
+      cartItem = { ...cartItem, amount: newAmount };
+    }
+    return cartItem;
+  });
+  return newAmount;
 }
 
 function setupCartFunctionality() {}
