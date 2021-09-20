@@ -87,6 +87,18 @@ function increaseAmount(id) {
   return newAmount;
 }
 
+function decreaseAmount(id) {
+  let newAmount;
+  cart = cart.map((cartItem) => {
+    if (cartItem.id === id) {
+      newAmount = cartItem.amount - 1;
+      cartItem = { ...cartItem, amount: newAmount };
+    }
+    return cartItem;
+  });
+  return newAmount;
+}
+
 // Remove item from the cart, but not from DOM
 function removeItem(id) {
   cart = cart.filter((cartItem) => cartItem.id !== id);
@@ -113,7 +125,17 @@ function setupCartFunctionality() {
       const newAmount = increaseAmount(parentID);
       parent.nextElementSibling.textContent = newAmount;
     }
-    // Decrease
+    // Decrease amount and remove item if amount is 0
+    if (parent.classList.contains('cart-item-decrease-btn')) {
+      const newAmount = decreaseAmount(parentID);
+      if (newAmount === 0) {
+        removeItem(id);
+        // remove article tag
+        parent.parentElement.parentElement.remove();
+      } else {
+        parent.previousElementSibling.textContent = newAmount;
+      }
+    }
 
     displayCartItemCount();
     displayCartTotal();
