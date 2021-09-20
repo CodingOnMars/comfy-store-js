@@ -87,7 +87,40 @@ function increaseAmount(id) {
   return newAmount;
 }
 
-function setupCartFunctionality() {}
+// Remove item from the cart, but not from DOM
+function removeItem(id) {
+  cart = cart.filter((cartItem) => cartItem.id !== id);
+}
+
+function setupCartFunctionality() {
+  cartItemsDOM.addEventListener('click', function (e) {
+    const element = e.target;
+    console.log(`this is: ${element}`);
+    // NOTE: in this case we have buttons with icons, that's why we need to target parent element as well
+    const parent = e.target.parentElement;
+    console.log(`this is: ${parent}`);
+    const id = e.target.dataset.id;
+    console.log(`this is: ${id}`);
+    const parentID = e.target.parentElement.dataset.id;
+    console.log(`this is: ${parentID}`);
+
+    // Remove
+    if (element.classList.contains('cart-item-remove-btn')) {
+      removeItem(id);
+      // NOTE: we want to remove article tag with all its content, that's why we traverse DOM to select the article:
+      // element.parentElement.parentElement.remove();
+      // Because we setup parent variable, we can use shorter syntax:
+      parent.parentElement.remove();
+    }
+    // Increase
+    // Decrease
+
+    displayCartItemCount();
+    displayCartTotal();
+    // Synchronize with local storage
+    setStorageItem('cart', cart);
+  });
+}
 
 const init = () => {
   // console.log(cart); // if there is no data, returns an empty array
