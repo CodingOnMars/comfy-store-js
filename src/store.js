@@ -21,7 +21,11 @@ const setupStore = (products) => {
 // console.log(store); // [], NOTE: returns an empty array, because we did not invoke setupStore() here. This note was actual in the beginning, when let store was equal to []
 
 // console.log(store); // now returns data from local storage. This data can be used across pages
-const findProduct = () => {};
+
+const findProduct = (id) => {
+  let product = store.find((product) => product.id === id);
+  return product;
+};
 
 /* NOTE: this is also valid way to export:
 export let store;

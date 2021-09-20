@@ -41,7 +41,7 @@ const setupPrice = (store) => {
     let newStore = store.filter((product) => product.price / 100 <= value);
 
     // Display products based on price range value
-    display(newStore, getElement('.products-container'));
+    display(newStore, getElement('.products-container'), true);
     // Display the error message if there are no products that match price filter
     if (newStore.length < 1) {
       const products = getElement('.products-container');
