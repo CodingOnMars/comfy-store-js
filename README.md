@@ -4,7 +4,7 @@
 
 [Click to open a live version](https://codingonmars.github.io/comfy-store-js/index.html) 🌐
 
-#### Screebshots
+#### Screenshots
 
 ![Products page](https://github.com/CodingOnMars/comfy-store-js/blob/main/screenshots/comfy-1.webp)
 
